@@ -1,11 +1,11 @@
-function My_First_Function() {
+function My_First_Function() {   //click me button
     var str = "Button";
-    document.getElementbyid("Button_Text").innerHTML = str;
+    document.getElementbyid("Button_Text").innerHTML = str; 
 }
 
-function myFunction() {
-    var sentence = "I am learning" ;
-    sentence += " a lot from this book!" ;
+function myFunction() {                 //sentence after click me
+    var sentence = "Spring " ;
+    sentence += " has sprung!" ;
     document.getElementById("Concatenate") .innerHTML = sentence ;
 }
 
