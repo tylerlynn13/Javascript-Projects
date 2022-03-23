@@ -33,7 +33,7 @@ function negation_Operator() {
   document.getElementById("Math").innerHTML= -x;
 }
 
-var x = t;
+var x = 5;
 x++;
 document.write(x);
 
