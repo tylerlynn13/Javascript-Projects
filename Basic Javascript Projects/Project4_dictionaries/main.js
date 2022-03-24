@@ -9,3 +9,5 @@ function my_Dictionary(){   //key-pair value
     delete Animal.Sound;  //delete function
     document.getElementById("Dictionary").innerHTML = Animal.Sound;
 }
+
+document.write(typeof "Word");
