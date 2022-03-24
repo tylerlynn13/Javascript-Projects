@@ -1,10 +1,11 @@
-function my_Dictionary(){
+function my_Dictionary(){   //key-pair value
     var Animal = {
-        Species:"Dog",
-        Color:"Black",
-        Breed:"Lab",
+        Species:"Bird",
+        Color:"Multi",
+        Breed:"Parakeet",
         Age:2,
-        Sound:"Bark!"
+        Sound:"Chirp"
     };
+    delete Animal.Sound;  //delete function
     document.getElementById("Dictionary").innerHTML = Animal.Sound;
 }
