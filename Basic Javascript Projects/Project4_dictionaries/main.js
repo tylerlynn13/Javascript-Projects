@@ -10,4 +10,3 @@ function my_Dictionary(){   //key-pair value
     document.getElementById("Dictionary").innerHTML = Animal.Sound;
 }
 
-document.write(typeof "Word");
