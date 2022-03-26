@@ -17,3 +17,7 @@ function s_Function() {
     document.getElementById("Example2").innerHTML = Number.isFinite ('85')
 }
 
+document.write(10 > 2)
+
+document.write(10 < 2)
+
