@@ -10,5 +10,6 @@ window.alert("HI")
 
 document.write("Pine" + "apple")
 
-var hi = "<span style='color:#ff0000'>hi</span>";
+var hi = "<span style='color:#ff0000'>hi</span>";   //assigning color to hi
 document.write(hi);
+

@@ -61,3 +61,6 @@ function Time_function() {                  //time function
     }
     document.getElementById("Time_of_day").innerHTML = Reply;
 }
+
+
+
