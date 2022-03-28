@@ -35,7 +35,7 @@ var X = 10;
       }
     }
 
-function Age_Function() {
+function Age_Function() {                       //age function
     Age = document.getElementById("Age").value;
     if (Age >= 18) {
         Vote = "You are old enough to vote!";
@@ -47,7 +47,7 @@ function Age_Function() {
 }
 
 
-function Time_function() {
+function Time_function() {                  //time function
     var Time = new Date().getHours();
     var Reply;
     if (Time < 12 == Time > 0) {
