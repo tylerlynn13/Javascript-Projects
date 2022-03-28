@@ -1,6 +1,6 @@
 function Ride_Function() {                           //object oriented
     var Height, Can_ride;
-    Height = document.getElementById("Height.").value;
+    Height = document.getElementById("Height").value;
     Can_ride = (Height < 52) ? "You are too short":"You are tall enough";
     document.getElementById("Ride").innerHTML = Can_ride + " to ride.";
 }
@@ -46,11 +46,14 @@ function Person(first, last, age, eye) {                  //object oriented
 
   function me_Function() {
     document.getElementById("me").innerHTML =
-    "My age is " + Tyler.age + "."; 
+    "My age is " + Tyler.age ; 
+
+var X = true
+
   }
   
-  function Count_Function() {              //nested function
-      document.getElementById("Nested_Function").innerHTML = Count();
+  function count_Function() {              //nested function
+      document.getElementById("nested").innerHTML = Count();
       function Count() {
           var Starting_point = 9;
           function Plus_one() {Starting_point += 1;}
@@ -58,3 +61,6 @@ function Person(first, last, age, eye) {                  //object oriented
           return Starting_point;
       }
   }
+
+
+  
