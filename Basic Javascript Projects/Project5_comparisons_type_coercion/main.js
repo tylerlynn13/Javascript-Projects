@@ -63,3 +63,11 @@ function or_Function() {
 function or2_Function() {
     document.getElementById("or2").innerHTML = (10 > 3 || 14 > 7);
 }
+
+function not_Function() {
+    document.getElementById("Not").innerHTML = ! (20 > 10);
+}
+
+function not2_Function() {
+    document.getElementById("Not2").innerHTML = ! (10 > 20);
+}
