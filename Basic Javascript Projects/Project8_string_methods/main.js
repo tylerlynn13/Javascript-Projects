@@ -47,3 +47,4 @@ function value_Method() {                   //value method
     var result = text.valueOf();
     document.getElementById("value").innerHTML = result;
 }
+
