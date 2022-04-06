@@ -1,14 +1,13 @@
- var text = "";
-var i = 0;
-while (i < 10) {
-    text += "<br>" + i;
-    i++;
+function count_To_Ten() {
+    var Digit = "";
+    var X = 1;
+    while (X < 11) {
+        Digit += "<br>" + X;
+        X++
+    }
+    document.getElementById("Counting_to_Ten").innerHTML = Digit;
 }
-function loop_Function() {
 
-document.getElementById("while").innerHTML = text;
-
-}
 
 var text = "Hello";
 var length = text.length;
@@ -51,12 +50,6 @@ function l_Function() {
 document.getElementById("l").innerHTML = X;
 
 }
-
-function my_Function(name) {
-    return "Hello" + name;
-    document.getElementById("pie").innerHTML = my_Function(name) ;
-}
-
 
     let car  = {
     make: "Dodge",
