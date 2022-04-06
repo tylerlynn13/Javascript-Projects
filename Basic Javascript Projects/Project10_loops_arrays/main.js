@@ -65,7 +65,7 @@ document.getElementById("l").innerHTML = X;
 document.getElementById("Car_Objects").innerHTML = car.description();
 
 
-function br_Fucntion() {
+function br_Function() {
     let text = "";
     for (let i = 0; i < 10; i++) {
         if (i === 3) { break; }
