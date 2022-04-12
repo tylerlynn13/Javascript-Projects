@@ -25,4 +25,26 @@ function Color_Function() {
         Color_Output = "Please enter a color exactly as written in the above list.";
     }
     document.getElementById("Output").innerHTML = Color_Output;
+
 }
+
+function Hello_World_Function() {
+    var A = document.getElementsByClassName("Click");
+    A[0].innerHTML = "The text has changed";
+}
+
+var c = document.getElementById("ID_Name");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+var grd = ctx.createLinearGradient(0,0,170,0);
+grd.addColorStop(0, "black");
+grd.addColorStop(1, "white");
+
+ctx.fillStyle = grd;
+ctx.fillRect(20, 20, 150, 100);
