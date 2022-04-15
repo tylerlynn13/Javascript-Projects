@@ -14,11 +14,11 @@ function placeXOrO(squareNumber) {
         //This condtion checks whos turn
         if (activePlayer === 'X') {
             //If activePlayer is = to X the x.png is placed
-            select.style.backgroundImage = 'url("Images/x.png")';
+            select.style.backgroundImage = 'url("Images/X.jpg")';
             //active player may only be 'X' or 'O', so if not 'X' must be 'O'
         } else {
             //if active palyer is =  to 'O' the O.png is placed
-            select.style.backgroundImage = 'url("Images/o.png")';
+            select.style.backgroundImage = 'url("Images/O.jpg")';
         }
         //squareNumber and activePlayer are concstrated togehter and added to array
         selectedSquares.push(squareNumber + activePlayer);
@@ -105,7 +105,7 @@ function checkWinConditions() {
     //this cond. checks for tie
     else if (selectedSquares.length >= 9) {
         //this function plays tie sound
-        audio('./media/tie.mps') ;
+        audio('./media/bubble2.mp3') ;
         //this function sets a .3 sec timer
         setTimeout(function () { resetGame(); }, 1000);
     }
@@ -139,3 +139,82 @@ function audio(audioURL) {
     //play method plays audio
     audio.play() ;
 }
+ //this function utilizes html canvas to draw win line
+ function drawWinLine(coordX1, coordY2, coordX2, coordY2) {
+     //this line accesses our html canvas elemnt
+     const canvas = document.getElementById('win-lines')
+     //this line gives us access to methods and properties to use on canvas
+     const c = canvas.getContext('2d');
+     //this line idicates where start of a lines x axis is
+     let xl = coordX1,
+     //this line idicates where the start of a lines y axis is
+        y1 = coordY1,
+        //this line indicates where the end
+        x2 = coordX2,
+        //this is where end of a lines x axis is
+        y2 = coordY2,
+        //this line is where end of lines a axis is
+        x = x1,
+        y = y1;
+
+    //this function interacts with the vanvas
+    function animationLineDrawing() {
+        //this variable creates a loop
+        const animationLoop = requestAnimationFrame(animateLineDrawing);
+        //this method clears content from last loop
+        c.clearRect(0, 0, 608, 608)
+        //this method starts new path
+        c.beginPath();
+        //this  method moves us to a starting point for new kine
+        c.moveTo(x1, y1)
+        //this method indicates the end pint in line
+        c.lineTo(x, y)
+        //sets width of our line
+        c.lineWidth = 10;
+        //this method sets color of our line
+        c.strokeStyle = 'rgba(70, 255, 33, .8)';
+        //this method draws everything we laid out above
+        c.stroke();
+        //this condtion checks if we have reached endpoint
+        if (x1 <= x2 && y1 <= y2) {
+            //this codntion add 10 to prev end point
+            if (x < x2) { x += 10; }
+            //this condition adss 10 to prev end point
+            if (y < y2) { y += 10; }
+            //this condition cancels our animation loop 
+            //if we have reached end point
+            if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop); }
+        }
+    }
+
+
+    //this function clears our canvass after our win line is drawn
+    function clear() {
+        //this line starts our animation loop
+        const animationLoop = requestAnimationFrame(clear);
+        //this line clears canvas
+        c.clearRect(0, 0, 608, 608);
+        //this line stops our animation loop
+        cancelAnimationFrame(animationLoop);
+    }
+    //this line disallows clicking while win sound playing
+    disableClick();
+    //this line plays win sounds
+    audio('./media/bubble1.mp3');
+    //this line calls our animation loop
+    animateLineDrawing();
+    //this line waits 1 sec then clears canvas resets game a nd allows clicking again
+    setTimeout(function () { clear() ; resetGame(); }, 1000);
+
+ }  
+
+ //this function resets the game in the event of a tie or win
+ function resetGame() {
+     //this for loop iterates through each HTML square elemnt
+     for (let i = 0; i < 9; i++) {
+         //this variable gets the html elment of 1
+         let square = document.getElementById(String(i))
+         //this re,oves our elemtns backgroundImage
+         square.style.backgroundImage = ''
+     }
+ }
