@@ -31,7 +31,7 @@ function placeXOrO(squareNumber) {
         //If active palyer is anything other than 'X'
         } else {
             //Change the activePlayer to 'X'
-            activePlayer = 'X'
+            activePlayer = 'X';
         }
 
         //This function plays placement sound
@@ -115,8 +115,8 @@ function checkWinConditions() {
     function arrayIncludes(squareA, squareB, squareC) {
         //thwese 3 variables will be ised to check for 3 in a row
         const a = selectedSquares.includes(squareA)
-        const b = selectSquares.includes(squareB)
-        const c = selectSquares.includes(squareC)
+        const b = selectedSquares.includes(squareB)
+        const c = selectedSquares.includes(squareC)
         // if the 3 variables we pass are all included in array true
         //returned and else if condtion executes drawwlines
         if (a === true && b === true && c === true) { return true }
@@ -160,7 +160,7 @@ function audio(audioURL) {
     //this function interacts with the vanvas
     function animationLineDrawing() {
         //this variable creates a loop
-        const animationLoop = requestAnimationFrame(animateLineDrawing);
+        const animationLoop = requestAnimationFrame(animationLineDrawing);
         //this method clears content from last loop
         c.clearRect(0, 0, 608, 608)
         //this method starts new path
@@ -202,7 +202,7 @@ function audio(audioURL) {
     //this line plays win sounds
     audio('./media/bubble1.mp3');
     //this line calls our animation loop
-    animateLineDrawing();
+    animationLineDrawing();
     //this line waits 1 sec then clears canvas resets game a nd allows clicking again
     setTimeout(function () { clear() ; resetGame(); }, 1000);
 
