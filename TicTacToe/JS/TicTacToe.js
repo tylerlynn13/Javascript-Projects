@@ -140,13 +140,13 @@ function audio(audioURL) {
     audio.play() ;
 }
  //this function utilizes html canvas to draw win line
- function drawWinLine(coordX1, coordY2, coordX2, coordY2) {
+ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
      //this line accesses our html canvas elemnt
      const canvas = document.getElementById('win-lines')
      //this line gives us access to methods and properties to use on canvas
      const c = canvas.getContext('2d');
      //this line idicates where start of a lines x axis is
-     let xl = coordX1,
+     let x1 = coordX1,
      //this line idicates where the start of a lines y axis is
         y1 = coordY1,
         //this line indicates where the end
@@ -185,6 +185,11 @@ function audio(audioURL) {
             //if we have reached end point
             if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop); }
         }
+        if (x1 <= x2 && y1 >= y2) {
+            if (x < x2) { x += 10; }
+            if (y > y2) { y -= 10; }
+            if (x >= x2 && y <= y2) { cancelAnimationFrame(animationLoop); }
+        }
     }
 
 
@@ -217,4 +222,5 @@ function audio(audioURL) {
          //this re,oves our elemtns backgroundImage
          square.style.backgroundImage = ''
      }
+     selectedSquares=[]
  }
