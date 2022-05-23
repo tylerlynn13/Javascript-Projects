@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="myDog"></p>
+
+        <script>
+        /*Javascript dictionary object*/
+        var dog = {name: "Dax", breed: "Great Pyrenees", color: "White"};
+        /*convert Javascript objects to string format*/
+        var JSONstring = JSON.stringfy(dog);
+        document.getElementById("myDog").innerHTML = JSONstring;
+        </script>
+
+        <p id="myodg"></p>
+
+        <script> 
+        /*this is a JSON string variable*/
+        var dog = '{"name": "Dax", "breed": "Great Pyrenees", "color": "White"}';
+        /*convert JSON strings to j0avascript objects*/
+        var JSONstring = JSON.parse(dog);
+        document.getElementById("mydog").innerHTML = JSONstring.name + " the " +
+        JSONstring.breed;
+        </script>
+    </body>
+</html>
